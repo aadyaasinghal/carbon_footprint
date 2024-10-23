@@ -1,0 +1,157 @@
+<form action="" method = "POST" >
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,200&display=swap" rel="stylesheet">
+    <style>
+        * {
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            font-family: 'DM Sans', sans-serif;
+        }
+        h1 {
+            color: rgb(0, 0, 0);
+            font-family: 'DM Sans', sans-serif;
+            margin: 50px 0.5px;
+            
+        }
+        section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            width: 100%;
+            background: url(/website/static/images/trees.png)no-repeat;
+        }
+        .form-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 400px;
+            height: 450px;
+            position: center;
+            border: 2px solid rgba(255,255,255,1);
+            border-radius: 20px;
+            background-color: rgb(255, 255, 255);
+        }
+        .inputbox {
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            position: center;
+            margin: 10px 0px;
+            background-color: transparent;
+            border-bottom: 1px solid #000000;
+        }
+        .inputbox label {
+            text-align: center;
+            position: center;
+            top: 50%;
+            left: 5px;
+            transform: translateY(-50%);
+            color: #000000;
+            font-size: 1em;
+            pointer-events: none;
+            transition: 0.5s;
+            background-color: transparent;
+        }
+        .inputbox input{
+            text-align: center;
+            width: 100%;
+            height: 50px;
+            border: none;
+            outline: none;
+            font-size: 1em;
+            padding: 0 35px 0 5px;
+            color: #000000;
+            background:transparent;
+            background-color: transparent;
+        }
+        .forward {
+            margin: 0 0 15px;
+            font-size: .9em;
+            color: #fff;
+            justify-content: center;
+        }
+
+        .forward label input {
+            margin-right: 3px;
+        }
+
+        .forward label a{
+            color: #fff;
+            text-decoration: none;
+            width: 150%;
+        }
+
+        .forward label a:hover{
+            text-decoration: underline;
+        }
+        button {
+            width: 100%;
+            height: 40px;
+            border-radius: 40px;
+            background: #ffffff;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 600;
+        }
+        button a{
+            width: 100%;
+            height: 40px;
+            border-radius: 40px;
+            background: #fff;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 600;
+        }
+
+        button:hover {
+            background-color: rgb(239, 237, 237);
+            transition: 0.3s ease;
+            size: 120%;
+        }
+
+        .register {
+            font-size: .9em;
+            color: #000000;
+            text-align: center;
+            margin: 25px 0 10px;
+        }
+
+        .register p a{
+            text-decoration: none;
+            color: #000000;
+            font-weight: 600;
+        }
+
+        .register p a:hover{
+            text-decoration: underline;
+        }
+        
+    </style>
+
+    <h1>Sign Up</h1>
+    <div class="inputbox">
+        <input type="email" required id="email" name="email" placeholder="Email">
+    </div>
+    <div class="inputbox">
+        <input type="name" required id="name" name="name" placeholder="Name">
+    </div>
+    <div class="inputbox">
+        <input type="password1" required id="password1" name="password1" placeholder="Password">
+    </div>
+    <div class="inputbox">
+        <input type="password2" required id="password2" name="password2" placeholder="Rewrite Password">
+    </div>
+    <button type = "submit" class = "btn btn-primary">
+        submit
+    </button>
+</form>

@@ -1,385 +1,422 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="https://use.typekit.net/pkw0kra.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href = "{{url_for('static',filename = 'styles/base.css')}}">
+    <link rel="stylesheet" href="https://use.typekit.net/pkw0kra.css">
+    
     <title>Document</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,200&display=swap" rel="stylesheet">
     <style>
-        * {
-            font-family: 'DM Sans', sans-serif;
+        *{
+        margin: 0px;
+        padding: 0px;
+        }
+        html {
+        height: 100%;
+        }
+        body{
+        height: 100%;
+        background-image: url("../static/background.png");            
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 20px;
+        padding-bottom: 40px;
         }
 
-        h1 {
-            color: rgb(0, 0, 0);
-            font-family: 'DM Sans', sans-serif;
-            text-align: center;
-            margin: 25px 0 10px;
-            
+        .logo{
+        background-color: white;
+        border: 2px solid;
+        border-radius: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        grid-row-start: 1;
+        grid-row-end: 3;
+        grid-column-start: 1;
+        grid-column-end: 2;
+        line-height: 27px;
+        width: 100%;
+        height: 100%;
+        max-width: 279px;
+        max-height: 93px;
+        font-family: "the-seasons", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 2.3vw;
         }
 
-        p {
-            color: rgb(0, 0, 0);
-            font-family: 'DM Sans', sans-serif;
-            text-align: center;
-            margin: 20px 100 200px;
+        .logo p{
+        font-family: "the-seasons", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 2.3vw;
         }
 
-        h3 {
-            color: rgb(0, 0, 0);
-            font-family: 'DM Sans', sans-serif;
-            text-align: center;
-            margin: 20px 100 200px;
+        .temp{
+        grid-row-start: 3;
+        grid-row-end: 9;
+        grid-column-start: 2;
+        grid-column-end: 6;
+        }
+        .logo img {
+        width: 100%;
+        height: auto;
+        max-width: 40%;
         }
 
-        .form-box {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100px;
-            height: 110px;
-            position: relative;
-            border: 2px solid rgba(255,255,255,1);
-            border-radius: 20px;
-            background-color: rgb(255, 255, 255);
-            text-align: center;
-            margin: 25px 0 10px;
-        }
-            .form {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 400px;
-            height: 450px;
-            position: relative;
-            border: 2px solid rgba(255,255,255,1);
-            border-radius: 20px;
-            background-color: rgb(255, 255, 255);
-            text-align: center;
-            margin: 25px 0 10px;
-            }
-        .input-box {
-            justify-content: center;
-            align-items: center;
-            position: center;
-            /*width: 310px;*/
-            background-color: transparent;
-            border-bottom: 2px solid #000000;
-            text-align: center;
-            margin: 50px 0 50px;
-        }
-        .input-box label {
-            position: absolute;
-            top: 50%;
-            left: 25px;
-            transform: translateY(-50%);
-            color: #ffffff;
-            font-size: 1em;
-            pointer-events: none;
-            transition: 0.5s;
-            background-color: transparent;
-            text-align: center;
-            margin: 25px 0 10px;
-        }
-        .input-box input{
-            width: 100%;
-            height: 10;
-            border: none;
-            outline: none;
-            font-size: 1em;
-            padding: 0 100px 0 5px;
-            color: #000000;
-            background:transparent;
-            background-color: transparent;
-            text-align: center;
-            margin: 25px 0 10px;
-        }
-        .forward {
-            margin: 0 0 15px;
-            font-size: .9em;
-            color: #fff;
-            justify-content: center;
-            text-align: center;
-            margin: 25px 0 10px;
+        .navbar-buttons button{
+        background-color: #FFBFCE;
+        margin-left: 10px;
+        margin-right: 10px;
+        align-items: center;
+        justify-content: center;
+        display: flex;
         }
 
-        .forward label input {
-            /*margin-right: 3px;*/
-            text-align: center;
-            margin-right: 25px;
+        .navbar-buttons button a {
+        font-family: "aktiv-grotesk", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        background-color: #FFBFCE;
+        align-items: center;
+        justify-content: center;
+        display: flex;
         }
 
-        .forward label a{
-            color: #fff;
-            text-decoration: none;
-            width: 150%;
+        .navbar-buttons {
+        display: flex;
+        align-items: center;
+
         }
 
-        .forward label a:hover{
-            text-decoration: underline;
-        }
-        button {
-            width: 100%;
-            height: 40px;
-            border-radius: 40px;
-            background: #fff;
-            border: none;
-            outline: none;
-            cursor: pointer;
-            font-size: 1em;
-            font-weight: 600;
-        }
-        button a{
-            width: 100%;
-            height: 40px;
-            border-radius: 40px;
-            background: #fff;
-            border: none;
-            outline: none;
-            cursor: pointer;
-            font-size: 1em;
-            font-weight: 600;
+        .navbar-buttons #home {
+        border: 2px solid;
+        border-radius: 50px;
+        width: 195px;
+        height: 46px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        grid-column-start: 3;
+        grid-column-end: 4;
         }
 
-        button:hover {
-            background-color: rgb(239, 237, 237);
-            transition: 0.3s ease;
-            size: 120%;
+        .navbar-buttons #calculator {
+        border: 2px solid;
+        border-radius: 50px;
+        width: 195px;
+        height: 46px;
+        display: flex;  
+        align-items: center;
+        justify-content: center; 
+        grid-row-start: 1;
+        grid-row-end: 2;
+        grid-column-start: 4;
+        grid-column-end: 5; 
         }
 
-        .next {
-            font-size: .9em;
-            color: #000000;
-            text-align: center;
-            margin: 25px 0 10px;
+        .navbar-buttons #statistics {
+        border: 2px solid;
+        border-radius: 50px;
+        width: 195px;
+        height: 46px;
+        display: flex;
+        align-items: center;
+        justify-content: center; 
+        grid-row-start: 1;
+        grid-row-end: 2;
+        grid-column-start: 5;
+        grid-column-end: 6; 
         }
 
-        .next p a{
-            text-decoration: none;
-            color: #000000;
-            font-weight: 600;
+        .navbar-buttons #take-action {
+        border: 2px solid;
+        border-radius: 50px;
+        width: 195px;
+        height: 46px;
+        display: flex;
+        align-items: center;
+        justify-content: center; 
         }
 
-        .next p a:hover{
-            text-decoration: underline;
+        .navbar-buttons #about {
+        border: 2px solid;
+        border-radius: 50px;
+        width: 195px;
+        height: 46px;
+        display: flex;
+        align-items: center;
+        justify-content: center; 
+        }
+
+        .header h1{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 40px;
+        border: 2px solid;
+        background-color: #FBE42C;
+        width: fit-content;
+        max-width: 100%;
+        height: 70px;
+        font-family: "the-seasons", sans-serif;
+        font-style: normal;
+        font-weight: 550;
+        font-size: 800%;
+        padding-bottom: 20px;
+        padding-left: 25px;
+        padding-right: 25px;
+        }
+
+        .navbar{
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 35px;
+        }
+
+        .main{
+        grid-template-areas:
+            'treebox . titlebox titlebox'
+            'treebox flowerbox titlebox titlebox'
+            'treebox flowerbox titlebox titlebox'
+            'treebox flowerbox titlebox titlebox';
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 2fr;
+        display: grid;
+        gap: 2vw;
+        padding: 2%;
+        /*justify-content: space-between;*/
+        }
+
+        .treebox{
+        grid-area: treebox;
+        background-color: white;
+        border-radius: 60px;
+        border: 2px solid;
+        padding: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /*margin-left: 40px;
+        margin-top: 25px;*/
+        /*width: 220px;
+        height: 560px;*/
+        }
+
+        .treebox img{
+        width: auto;
+        max-width: 150%;
+        height: 110%;
+        }
+
+        .flowerbox{
+        grid-area: flowerbox;
+        background-color: white;
+        border-radius: 60px;
+        border: 2px solid;
+        padding: 10%;
+        /*width: 271px;
+        height: 370px;*/
+        }
+
+        .flowerbox p{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: "aktiv-grotesk", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        }
+
+        .center{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        }
+
+        .flowerbox a{
+        width: 70%;
+        height: 45px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: "aktiv-grotesk", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        background-color: #ffbfce;
+        border-radius: 50px;
+        border: 2px solid;
+        text-decoration: none;
+        color: black;
+        }
+
+        .flowerbox a:hover{
+        background-color: #ff87a3;
+        transition: 0.5s ease;
+        }
+
+        .purplebox{
+        background-color: #ebaafd;
+        border-radius: 25px;
+        border-color: black;
+        border: 2px solid;
+        padding: 10px;
+        padding-left: 25px;
+        padding-right: 25px;
+        margin-left: 2vw;
+        transform: rotate(20deg);
+        margin-top: -14vh;
+        margin-bottom: 6vh;
+        width: fit-content;
+        }
+
+        .purplebox p{
+        font-family: "aktiv-grotesk", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 130%; 
+
+        }
+        .titlebox{
+        grid-area: titlebox;
+        background-color: #fafec3;
+        border-radius: 60px;
+        border: 2px solid;
+        /*margin-right: 60px;
+        margin-top: 25px;*/
+        padding: 6%;
+        padding-top:10%;
+        /*width: 570px;
+        height: 490px;*/
+        }
+
+        .titlebox h1{
+        font-family: "the-seasons", sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 900%;
+        line-height: 120px;
+        padding-top: 5%;
+        }
+
+        .calcbutton{
+        margin: 0px;
+        padding: 0px;
+        }
+
+        .calcbutton button{
+        background-color: #fbe42c;
+        border-radius: 35px;
+        border: 2px solid;
+        text-decoration: none;
+        color: black;
+        height: fit-content;
+        width: 100%;
+        margin-top: 10%;
+        display: flex;
+        align-items: center;
+        }
+
+        .calcbutton p{
+        padding-top: 2%;
+        padding-bottom: 2%;
+        padding-left: 5%;
+        padding-right: 5%;
+        font-family: "aktiv-grotesk", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: x-large;
+        width: 100%;
+        }
+
+        .calcbutton a{
+        width: 10%;
+        }
+
+        .calcbutton button:hover{
+        background-color: #ffc311;
+        transition: 0.5s ease;
+        }
+
+        img{
+        width: 100%;
+        }
+
+        img[id = "arrow"]{
+        width: 40%;
         }
         
-        .img--container {
-            width: 50%
-        }
-        .navbar {
-            display: flex;
-            background: #131311;
-            height: 80px;
-            justify-content: center;
-            align-items: center;
-            font-size: 1.2rem;
-            position: sticky;
-            top: 0;
-            z-index: 999;
-        }
-        .navbar__container {
-            display: flex;
-            justify-content: space-between;
-            height: 80 px;
-            z-index: 1;
-            width: 100%;
-            max-width: 1300px;
-            margin: 0 auto;
-            padding: 0 50px;
-        }
-        .navbar__menu {
-            display: flex;
-            align-items: center;
-            list-style: none;
-            text-align: center;
-        }
-
-        .navbar__item {
-            height: 80px;
-        }
-        .navbar__links {
-            color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            padding: 0 1rem;
-            height: 100%;
-        }
-
-        .navbar__btn {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 0 1rem;
-            width: 100%;
-        }
-
-        .button {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-decoration: none;
-            padding: 10px 20px;
-            height: 100%;
-            width: 100%;
-            border: none;
-            outline: none;
-            border-radius: 4px;
-            background: rgb(0, 140, 255);
-            color: #fff;
-        }
-
-        .button:hover {
-            background: #3769ff;
-            transition: all 0.3s ease;
-        }
-
-        .navbar__links:hover {
-            color: rgb(0, 140, 255);
-            transition: all 0.3s ease;
+        a{
+        text-decoration: none;
+        color: black;
         }
     
-        @media screen and (max-width: 960px) {
-        .navbar__container {
-            display: flex;
-            justify-content: space-between;
-            height: 80px;
-            z-index: 1;
-            width: 100%;
-            max-width: 1300px;
-            padding: 0;
-         }
-
-        .navbar__menu {
-            display: grid;
-            grid-template-columns: auto;
-            margin: 0;
-            width: 100%;
-            position: absolute;
-            top: -1000px;
-            opacity: 1;
-            transition: all 0.5s ease;
-            height: 50vh;
-            z-index: -1;
-        }
-
-        .navbar__menu.active {
-            background: #131313;
-            top: 100%;
-            opacity: 1;
-            transition: all 0.5s ease;
-            z-index: 99;
-            height: 50vh;
-            font-size: 1.6rem;
-        }
-
-        #navbar__logo{
-            padding-left: 25px;
-        }
-
-        .navbar__toggle .bar {
-            width: 25px;
-            height: 3px;
-            margin: 5px auto;
-            transition: all 0.3s ease-in-out;
-            background: #fff;
-        }
-
-        .navbar__item {
-            width: 100%;
-        }
-
-        .navbar__links {
-            text-align: center;
-            padding: 2rem;
-            width: 100%;
-            display: table;
-        }
-
-        #mobile-menu {
-            position: absolute;
-            top: 20%;
-            right: 5%;
-            transform: translate(5%, 20%);
-        }
-
-        .navbar__btn {
-            padding-bottom: 2rem;
-        }
-
-        .button {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 80%;
-            height: 80px;
-            margin: 0;
-        }
-
-        .navbar__toggle .bar {
-            display: block;
-            cursor: pointer;
-        }
-
-        #mobile-menu.is-active .bar:nth-child(2) {
-            opacity: 0;
-        }
-
-        #mobile-menu.is-active .bar:nth-child(1) {
-            transform: translateY(8px) rotate(45deg);
-        }
-
-        #mobile-menu.is-active .bar:nth-child(3) {
-            transform: translateY(-8px) rotate(-45deg);
-        }
-    }
     </style>
 </head>
 <body>
-    <nav class = "navbar">
-        <div class="navbar__container">
-            <div class="navbar__toggle" id = "mobile-menu">
-                <span class = "bar"></span>
-                <span class = "bar"></span>
-                <span class = "bar"></span>
-            </div>
-            <ul class = "navbar__menu">
-                <li class = "navbar__item">
-                    <a class = "navbar__links" href = "/home">
-                        Home
-                    </a>
-                </li>
-                <li class = "navbar__item">
-                    <a class = "navbar__links" href = "/calculator">
-                        Calculator
-                    </a>
-                </li>
-                <li class = "navbar_item">
-                    <a class = "navbar__links" href = "/stats">
-                       Stats
-                    </a>
-                </li>
-                <li class = "navbar__item">
-                    <a class = "navbar__links" href = "/take-action">
-                        Take Action
-                     </a>
-                </li>
-            </ul>
+    <div class="navbar">
+        <div class="logo">
+            <img src = "{{url_for('static',filename='earth.png')}}">
+            <p>
+                CARBON CALC
+            </p>
         </div>
-    </nav>
-    <h1>
-        Welcome to CarbonCalc
-    </h1>
-    <h3>
-        Why is your carbon footprint important to calculate?
-    </h3>
-    <p>
-        Being aware of and calculating your carbon footprint is crucial because it helps us understand the environmental impact of our daily activities. By quantifying their carbon emissions, we can make informed choices to reduce their environmental footprint, minimize our contribution to climate change, and work towards a more sustainable and eco-friendly lifestyle. This awareness empowers us to take responsible actions, such as reducing energy consumption, choosing eco-friendly transportation options, and supporting environmentally conscious products and initiatives, ultimately contributing to a healthier planet for future generations.
-    </p>
-
+        <div class="navbar-buttons">
+            <button id = "home">
+                <a href = "/home"> HOME </a>
+            </button>
+            <button id = "calculator">
+                <a href = "/calculator"> CALCULATOR </a>
+            </button>
+            <button id = "statistics">
+                <a href = "/stats"> STATISTICS </a>
+            </button>
+            <button id = "take-action">
+                <a href = "/take-action" > TAKE ACTION </a>
+            </button>
+            <button id = "about">
+                <a href = "/about" > ABOUT </a>
+            </button>
+        </div>
+    </div> 
+    <div class="main">
+        <div class="treebox">
+            <img src = "{{url_for('static',filename='movingTreeCropped.gif')}}">
+        </div>
+        <div class="flowerbox">
+            <img src = "{{url_for('static',filename='blossom.png')}}">
+            <p> LEARN HOW TO </p>
+            <div class="center">
+                <a href = "/take-action">
+                    TAKE ACTION
+                </a>
+            </div>
+        </div>
+        <div class="titlebox">
+            <div class = "purplebox">
+                <p> WELCOME TO </p>
+            </div>
+            <h1>
+                CARBON CALC
+            </h1>
+            <div class="calcbutton">
+                <button>
+                    <p> CALCULATE TO ACTIVELY WORK TOWARDS A MORE SUSTAINABLE AND ECO-FRIENDLY LIFESTYLE </p>
+                    <a href = "/calculator">
+                        <img src = "{{url_for('static',filename='arrow.png')}}">
+                    </a>
+                </button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

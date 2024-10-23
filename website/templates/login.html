@@ -1,1 +1,231 @@
-{% extends "base.html" %} {% block title %}Login{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.typekit.net/pkw0kra.css">
+
+    <style>
+        body {
+            background-size: cover;
+            height: 100%;
+            display: flex;
+            overflow-y: hidden;
+        }
+      
+       .logo-tag {
+            border: 2px solid;
+            border-radius: 25px;
+            background-color: white;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: left;
+            width: 250px;
+            height: 50px;
+
+        }
+        .logo-tag h1 {
+            align-items: center;
+            justify-content: center;
+            display: flex;
+        }
+          .left-side{
+            background-image: url("../static/background.png");            
+            background-repeat: repeat-y;
+            float: left;
+            height:100%;
+            width: 50%;
+            background-size: cover;
+            padding-top: 40px;
+            padding-left: 50px;
+            padding-right: 50px;
+          }
+
+          *{
+            margin: 0px;
+            font-family: "the-seasons", sans-serif;
+            font-weight: 10000;
+            font-style: normal;
+
+          }
+        html {
+            height: 100%;
+        }
+           
+        .inputbox input{
+          border-radius: 25px;
+          border: 2px solid;
+          background-color: #FAFEC3;
+          width: 100%;
+          height: 50px;
+          padding-left: 20px;
+          padding-right: 20px;
+          font-family: "aktiv-grotesk", sans-serif;
+          font-weight: 300;
+          font-style: normal;
+          }
+
+          .inputbox{
+            display: flex;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 30px;
+            
+          }
+          .inputs{
+            margin-top: 70px;
+          }
+
+          .form-box{
+            position: relative;
+            display: flex;
+            height: 100%;
+            width: 100%;
+
+          }
+          .form-box h1{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 25px;
+            border: 2px solid;
+            background-color: #FBE42C;
+            width: 100%;
+            max-width: 100%;
+            height: 70px;
+            font-weight: 550;
+            font-size: 9vw;
+            padding-bottom: 20px;
+          }
+          
+          .right-side{
+            background-color:#A4D496;
+            width: 50%;
+            height: 100%;
+            margin: 0px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 130px;
+          }
+          button{
+            height: 50px;
+            width: 100%;
+            border: 2px solid;
+            border-radius: 50px;
+            background-color: white;
+            
+          }
+          .forward{
+            padding-top: 80px;
+            padding-left: 90px;
+            padding-right: 90px;
+          }
+          button a{
+          font-family: "aktiv-grotesk", sans-serif;
+          font-weight: 300;
+          font-style: normal;
+          }
+
+          form {
+            display: block;
+            margin: 0px;
+            width: 100%;
+          }
+
+          .rectangle {
+            display: flex;
+            border-radius: 25px;
+            border: 2px solid;
+            background-color: #FDFFE6;
+            height: 70%;
+            align-items: center;
+            justify-content: center;
+            margin-top: 50px;
+          }
+
+          img {
+            padding: 15%;
+            position: relative;
+            width: 85%;
+            max-width: 85%;
+            height: auto;
+            max-height: 85%;          
+          }
+
+          .register p {
+          align-items: center;
+          justify-content: center;
+          display: flex;
+          text-decoration: none;
+          color: #744C4D;
+          font-family: "aktiv-grotesk", sans-serif;
+          font-weight: 300;
+          font-style: normal;
+ 
+          }
+          .register {
+          padding-top: 20px;
+          padding-left: 0px;
+          padding-right: 0px;
+          }
+          .register button {
+          background-color: #FFBFCE;            
+          }
+
+          .forward button a {
+          text-decoration: none;
+          color: #744C4D;
+          }
+
+        </style>
+</head>
+<body>
+        <div class="left-side">
+            <div class = "logo-tag">
+                <h1>
+                    CARBONCALC
+                </h1>
+            </div>
+            <div class = "oval">
+            </div>
+            <div class = "rectangle">
+              <img src = "{{url_for('static',filename='earth.png')}}">
+              </div>
+        </div>
+        <div class="right-side">
+            <div class="form-box">
+                    <form action="" method = "POST" >
+                        <h1>sign in</h1>
+                        <div class = "inputs">
+                          <div class="inputbox">
+                              <input type="email" required id="email" name="email" placeholder="Username:">
+                          </div>
+                          <div class="inputbox">
+                              <input type="password" required id="password" name="password" placeholder="Password:">
+                          </div>
+                        </div>
+                        <div class="forward">
+                          <button>
+                              <a href = "/home" id = "home"> Login </a>
+                          </button>
+                        <div class="register">
+                          <button>
+                            <a href = "/sign_up" id = "sign_up"> Get Started: Create an Account </a>
+                          </button>
+                            <!--<p>
+                                  Get Started <a href="/sign-up" id="signUp">
+                                  Create Account
+                                  </a>
+                              </p> 
+                            -->
+                          </div>
+                      </div>
+                    </form>  
+            </div>
+        </div>
+</body>
+</html>

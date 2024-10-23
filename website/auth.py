@@ -14,13 +14,13 @@ def login():
         password = request.form.get("password")
         login_info = pd.read_csv("login_info.csv",index_col="email")
         emails = login_info.index
-        if email in emails and check_password_hash(login_info.loc[email,"password"],password):
+        if email in emails and login_info.loc[email,"password"] == password:
             flash("Signed In Successfully", category = "success")
             session["current_user"] = email
             #return render_template(url_for("views.home"))
             return render_template("home.html")
 
-        elif email in emails and not check_password_hash(login_info.loc[email,"password"],password):
+        elif email in emails and not login_info.loc[email,"password"]==password:
             flash("Passowrd Incorrect", category = "error")
         else:
             flash("Email is not registered", category = "error")

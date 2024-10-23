@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,200&display=swap" rel="stylesheet">
+    <link rel = "stylesheet" href = "{{url_for('static',filename = 'styles/stats.css')}}"> 
+</head>
+<body>
+    <nav class = "navbar">
+        <div class="navbar__container">
+            <div class="navbar__toggle" id = "mobile-menu">
+                <span class = "bar"></span>
+                <span class = "bar"></span>
+                <span class = "bar"></span>
+            </div>
+            <ul class = "navbar__menu">
+                <li class = "navbar__item">
+                    <a class = "navbar__links" href = "/home">
+                        Home
+                    </a>
+                </li>
+                <li class = "navbar__item">
+                    <a class = "navbar__links" href = "/calculator">
+                        Calculator
+                    </a>
+                </li>
+                <li class = "navbar_item">
+                    <a class = "navbar__links" href = "/stats">
+                       Stats
+                    </a>
+                </li>
+                <li class = "navbar__item">
+                    <a class = "navbar__links" href = "/take-action">
+                        Take Action
+                     </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <h1>
+        Statistics Page
+    </h1>
+    <p>
+        The amount of metric carbon tons you used this week is 0.081 tons. The global average per person is around 0.0769 tons per week. The ideal amount of carbon released should be 0.038 tons per week.
+    </p>
+<div class = "img__container">
+    <img scr = "/website/static/images/water use.png" alt = "pic" id = "main_img">
+</div>
+
+</body>
+</html>

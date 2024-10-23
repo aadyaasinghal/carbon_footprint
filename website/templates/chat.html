@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://use.typekit.net/pkw0kra.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carbon Calc</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; /* Helps with consistent sizing */
+        }
+
+        html, body {
+            height: 100%;
+            background-image: url("../static/background.png");
+            padding: 20px;
+            display: flex;
+            flex-direction: column; /* Stack elements vertically */
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 35px;
+        }
+
+        .logo {
+            background-color: white;
+            border: 2px solid;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            max-width: 279px;
+        }
+
+        .navbar-buttons {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-buttons button {
+            background-color: #FFBFCE;
+            border: 2px solid;
+            border-radius: 50px;
+            margin: 0 10px;
+            width: 195px;
+            height: 46px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .header-container {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .header-container h1 {
+            background-color: #FBE42C;
+            border: 2px solid;
+            border-radius: 40px;
+            padding: 20px 25px;
+            font-family: "the-seasons", sans-serif;
+            font-weight: 550;
+            font-size: 2.5em; /* Adjust font size */
+        }
+
+        .main {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .comparisonbox, .aboutbox, .picbox {
+            background-color: white;
+            border-radius: 20px;
+            border: 2px solid;
+            padding: 20px;
+            height: fit-content; /* Adjust height based on content */
+        }
+
+        .comparisonbox h2, .aboutbox h2 {
+            font-family: "the-seasons", sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .comparisonbox p, .aboutbox p {
+            font-family: "aktiv-grotesk", sans-serif;
+            font-weight: 300;
+            font-size: 1rem;
+            line-height: 1.4;
+            margin: 10px 0;
+        }
+
+        .picbox {
+            text-align: center;
+        }
+
+        .picbox img {
+            width: 70%;
+            border-radius: 10px; /* Optional: gives rounded corners to images */
+        }
+
+        .park-caption {
+            font-size: 0.8em;
+            font-family: "aktiv-grotesk", sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img src="{{url_for('static',filename='earth.png')}}" alt="Logo">
+            <p>CARBON CALC</p>
+        </div>
+        <div class="navbar-buttons">
+            <button><a href="/home">HOME</a></button>
+            <button><a href="/calculator">CALCULATOR</a></button>
+            <button><a href="/stats">STATISTICS</a></button>
+            <button><a href="/take-action">TAKE ACTION</a></button>
+            <button><a href="/about">ABOUT</a></button>
+        </div>
+    </div>
+    <div class="header-container">
+        <h1>Take Action</h1>
+    </div>
+    <div class="main">
+        <div class="comparisonbox">
+            <h2>Assess Your Output</h2>
+            <p>On average, a person's total carbon footprint is about 4.6 metric tons of CO2 per year, which translates to approximately 0.09 metric tons of CO2 per week.</p>
+            <p>To analyze your impact, compare your total CO2 emissions this week with the average of 0.09 metric tons (90 kg). If your emissions are higher, consider implementing more strategies to lower your carbon output.</p>
+            <p>If your emissions are lower, congratulations! You're making a positive impact. Continue tracking your habits to maintain and improve your carbon footprint.</p>
+        </div>
+        <div class="aboutbox">
+            <h2>Make Small, Impactful Changes</h2>
+            <p>Start by making small, impactful changes in your everyday habits to lower your carbon footprint. Every effort counts, and with consistency, these changes will help build a sustainable future.</p>
+            <h2>Reduce Water Usage</h2>
+            <p>Reduce water waste by taking shorter showers, fixing leaks, and using water-efficient appliances.</p>
+            <h2>Minimize Waste</h2>
+            <p>Minimize trash production by recycling, reusing, and opting for sustainable products.</p>
+            <h2>Eco-Friendly Transportation</h2>
+            <p>Choose eco-friendly transportation options like biking, carpooling, or using public transport.</p>
+            <h2>Lower Energy Consumption</h2>
+            <p>Lower your home’s energy use by switching to energy-efficient appliances.</p>
+            <h2>Offset Your Carbon Emissions</h2>
+            <p>Consider investing in carbon offset projects to balance out unavoidable carbon emissions.</p>
+        </div>
+        <div class="picbox">
+            <img src="{{url_for('static',filename='nationalpark.jpg')}}" alt="Banff National Park">
+            <p>Banff National Park</p>
+            <p class="park-caption"><em>A reminder of the beauty we are protecting</em></p>
+        </div>
+        <div class="picbox">
+            <img src="{{url_for('static', filename='greatbarrierReef.jpeg')}}" alt="Great Barrier Reef">
+            <p>Great Barrier Reef</p>
+            <p class="park-caption"><em>Yet another view to protect</em></p>
+        </div>
+    </div>
+</body>
+</html>

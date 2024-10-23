@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://use.typekit.net/pkw0kra.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.typekit.net/pkw0kra.css">
+    
+    <title>Document</title>
+    <style>
+        *{
+        margin: 0px;
+        padding: 0px;
+        }
+        html {
+        height: 100%;
+        }
+        body{
+        height: 100%;
+        background-image: url("../static/background.png");            
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 20px;
+        padding-bottom: 40px;
+        }
+
+        .logo{
+        background-color: white;
+        border: 2px solid;
+        border-radius: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        grid-row-start: 1;
+        grid-row-end: 3;
+        grid-column-start: 1;
+        grid-column-end: 2;
+        line-height: 27px;
+        width: 100%;
+        height: 100%;
+        max-width: 279px;
+        max-height: 93px;
+        font-family: "the-seasons", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 2.3vw;
+        }
+
+        .temp{
+        grid-row-start: 3;
+        grid-row-end: 9;
+        grid-column-start: 2;
+        grid-column-end: 6;
+        }
+        .logo img {
+        width: 100%;
+        height: auto;
+        max-width: 40%;
+        }
+
+        .navbar-buttons button{
+        background-color: #FFBFCE;
+        margin-left: 10px;
+        margin-right: 10px;
+        }
+
+        .navbar-buttons button a {
+        font-family: "aktiv-grotesk", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        }
+
+        .navbar-buttons {
+        display: flex;
+        align-items: center;
+
+        }
+
+        .navbar-buttons #home {
+        border: 2px solid;
+        border-radius: 50px;
+        width: 195px;
+        height: 46px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        grid-column-start: 3;
+        grid-column-end: 4;
+        }
+
+        .navbar-buttons #calculator {
+        border: 2px solid;
+        border-radius: 50px;
+        width: 195px;
+        height: 46px;
+        display: flex;  
+        align-items: center;
+        justify-content: center; 
+        grid-row-start: 1;
+        grid-row-end: 2;
+        grid-column-start: 4;
+        grid-column-end: 5; 
+        }
+
+        .navbar-buttons #statistics {
+        border: 2px solid;
+        border-radius: 50px;
+        width: 195px;
+        height: 46px;
+        display: flex;
+        align-items: center;
+        justify-content: center; 
+        grid-row-start: 1;
+        grid-row-end: 2;
+        grid-column-start: 5;
+        grid-column-end: 6; 
+        }
+
+        .navbar-buttons #take-action {
+        border: 2px solid;
+        border-radius: 50px;
+        width: 195px;
+        height: 46px;
+        display: flex;
+        align-items: center;
+        justify-content: center; 
+        }
+
+        .navbar-buttons #about {
+        border: 2px solid;
+        border-radius: 50px;
+        width: 195px;
+        height: 46px;
+        display: flex;
+        align-items: center;
+        justify-content: center; 
+        }
+
+        a{
+        text-decoration: none;
+        color: black;
+        }
+
+        .header h1{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 40px;
+        border: 2px solid;
+        background-color: #FBE42C;
+        width: fit-content;
+        max-width: 100%;
+        height: 70px;
+        font-family: "the-seasons", sans-serif;
+        font-style: normal;
+        font-weight: 550;
+        font-size: 800%;
+        padding-bottom: 20px;
+        padding-left: 25px;
+        padding-right: 25px;
+        }
+
+        .navbar{
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 35px;
+        }
+
+        .header-container{
+        justify-content: center;
+        width: 100%;
+        height: 50vh;
+        padding-bottom: 100px;
+        }
+
+        .main{
+        grid-template-areas: 
+            'aboutbox aboutbox aboutbox picbox';
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        display: grid;
+        gap: 1vw;
+        padding: 2%;
+        height: 100%;
+        }
+        
+        .aboutbox{
+        grid-area: aboutbox;
+        background-color: white;
+        border-radius: 60px;
+        border: 2px solid;
+        padding: 5%;
+        display: flex;
+        }
+
+        .aboutbox p{
+        font-family: "aktiv-grotesk", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 130%;
+        line-height: 30px;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        }
+
+        .header{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        }
+
+        .picbox {
+        grid-area: picbox;
+        background-color: white;
+        border-radius: 60px;
+        border: 2px solid;
+        padding: 5%;
+        padding-top: 50px;
+        
+        }
+
+        .picbox p{
+        font-family: "aktiv-grotesk", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+
+        img{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 70%;
+        }
+
+        .image{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img src = "{{url_for('static',filename='earth.png')}}">
+            <p>
+                CARBON CALC
+            </p>
+        </div>
+        <div class="navbar-buttons">
+            <button id = "home">
+                <a href = "/home"> HOME </a>
+            </button>
+            <button id = "calculator">
+                <a href = "/calculator"> CALCULATOR </a>
+            </button>
+            <button id = "statistics">
+                <a href = "/stats"> STATISTICS </a>
+            </button>
+            <button id = "take-action">
+                <a href = "/take-action" > TAKE ACTION </a>
+            </button>
+            <button id = "about">
+                <a href = "/about" > ABOUT </a>
+            </button>
+        </div>
+    </div>
+    <div class = "header-container">
+        <div class="header">
+            <h1> about </h1>
+        </div>   
+        <div class="temp"></div>
+        <div class="main">
+            <div class="aboutbox">
+                <p>         Hi! I'm a sixteen-year-old high school student with a passion for coding and a love for our planet. I created CarbonCalc to combine these interests and make it easier for people to understand and reduce their carbon footprint.
+                            I started carbonCalc because I wanted to make it easier for people to see the difference they can make in their daily lives. By understanding your carbon footprint, you can identify areas where small changes can lead to big results. Whether it's cutting down on energy use, reducing waste, or making more sustainable choices, carbonCalc is here to help you every step of the way.
+                            I'm excited to share this journey with you and to use technology to empower positive change. Together, we can work towards a more sustainable future, one week at a time! </p>
+            </div>
+            <div class="picbox">
+                <div class="image">
+                    <img src = "{{url_for('static',filename='aadyaapic.jpeg')}}">
+                </div>
+                <p> -Aadyaa Singhal </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
